@@ -36,6 +36,10 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql:42.5.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+
+    implementation("org.springdoc:springdoc-openapi-data-rest:1.6.0")
+    implementation("org.springdoc:springdoc-openapi-ui:1.6.0")
+    implementation("org.springdoc:springdoc-openapi-kotlin:1.6.0")
 }
 
 tasks.withType<KotlinCompile> {
