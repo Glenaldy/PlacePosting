@@ -1,0 +1,39 @@
+{{> includes/header }}
+
+<form action="/insert_place" method="post" class="card">
+    <div class="card-header text-center">
+        <h5>Insert New Place</h5>
+    </div>
+    <div class="card-body form-group d-flex flex-column">
+        <div>
+            <label for="name">Place Name<br>
+                <input class="form-control" type="text" name="name">
+            </label>
+        </div>
+        <div>
+            <label for="description">Description<br>
+                <input class="form-control" type="text" name="description">
+            </label>
+        </div>
+        <div>
+            <label for="address">Address<br>
+                <input class="form-control" type="text" name="address">
+            </label>
+        </div>
+        <div>
+            <label for="type">Type<br>
+                <select class="form-select" name="type">
+                    <option value="none" selected disabled hidden>Select type</option>
+                    {{#allType}}
+                        <option value={{id}}>{{typeName}}</option>
+                    {{/allType}}
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="text-center card-footer">
+        <input class="btn btn-primary" type="submit" value="Save">
+    </div>
+</form>
+
+{{> includes/footer }}

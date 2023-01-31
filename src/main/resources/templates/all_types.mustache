@@ -1,0 +1,30 @@
+{{> includes/header }}
+<div class="d-flex flex-row flex-wrap gap-3 mb-5">
+    <form action="/admin/insert_type" method="post" class="card form-group" style="width: 18rem;">
+        <h4 class="card-header">Insert New Type</h4>
+        <div class="card-body">
+            <label for="name">Type name<br>
+                <input class="form-control" type="text" name="typeName" required>
+            </label>
+        </div>
+        <div class="text-center card-footer">
+            <input class="btn btn-primary" type="submit" value="Save">
+        </div>
+    </form>
+</div>
+
+<div class="d-flex flex-row flex-wrap gap-3">
+    {{#type}}
+        <div class="card " style="width: 12rem;">
+            <h4 class="card-header">{{typeName}}</h4>
+            <div class="card-footer d-flex justify-content-center">
+                <form action="/admin/delete_type" method="post">
+                    <input type="hidden" value="{{id}}" name="delete">
+                    <input type="submit" class="btn btn-danger card-link" value="Delete">
+                </form>
+            </div>
+        </div>
+    {{/type}}
+</div>
+
+{{> includes/footer}}

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm bg-light">
+    <div class="container-fluid d-flex justify-content-between">
+        <a class="navbar-brand">{{#title}}{{title}}{{/title}}</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto mb-5 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/show_all">All Place Posted</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/show_mine">My Place</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/insert_place">Insert new place</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/types">Edit Types(Admin Only)</a>
+                </li>
+
+            </ul>
+            <div class="d-flex align-items-center justify-content-between nav-item">
+                {{#user}}
+                    <div class="m-1 text-center d-flex align-items-center">Hello, {{name}}</div>
+                    <a href="/logout" class="p-1 btn btn-danger nav-link">Log Out</a>
+                {{/user}}
+                {{^user}}
+                    <p class="m-1 text-center d-flex align-items-center">Please Login</p>
+                    <a href="/login" class="p-1 btn btn-primary nav-link">Login</a>
+                {{/user}}
+            </div>
+        </div>
+    </div>
+</nav>

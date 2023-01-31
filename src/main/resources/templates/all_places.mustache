@@ -1,0 +1,26 @@
+{{> includes/header }}
+
+<div class="d-flex flex-row flex-wrap gap-3">
+    {{#place}}
+        <div class="card " style="width: 18rem;">
+            <h4 class="card-header">{{name}}</h4>
+            <div class="card-body">
+                <h5 class="card-title">{{description}}</h5>
+                <p class="card-text">{{address}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    {{#typeList}}
+                        <a href="#" class="btn btn-info btn-sm card-link">{{typeName}}</a>
+                    {{/typeList}}
+                </li>
+            </ul>
+            <div class="card-footer d-flex justify-content-between">
+                <p>Posted By: {{poster.name}}</p>
+            </div>
+        </div>
+    {{/place}}
+</div>
+
+
+{{> includes/footer}}

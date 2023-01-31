@@ -1,0 +1,48 @@
+{{> includes/header }}
+
+{{#place}}
+    <form action="/edit_place" method="post" class="card">
+        <div class="card-header text-center">
+            <h5>Edit Place</h5>
+        </div>
+        <div class="card-body form-group d-flex flex-column">
+            <div>
+                <label for="name">Place Name<br>
+                    <input class="form-control" type="text" name="name" value="{{name}}">
+                </label>
+            </div>
+            <div>
+                <label for="description">Description<br>
+                    <input class="form-control" type="text" name="description" value="{{description}}">
+                </label>
+            </div>
+            <div>
+                <label for="address">Address<br>
+                    <input class="form-control" type="text" name="address" value="{{address}}">
+                </label>
+            </div>
+            <div>
+                <label for="type">Type<br>
+                    <select class="form-select" name="type">
+                        {{#typeList}}
+                            <option value={{id}} selected hidden>{{typeName}}</option>
+                        {{/typeList}}
+                        {{^typeList}}
+                            <option value="none" selected disabled hidden>Select type</option>
+                        {{/typeList}}
+                        <option value="">None</option>
+                        {{#allType}}
+                            <option value="{{id}}">{{typeName}}</option>
+                        {{/allType}}
+                    </select>
+                </label>
+            </div>
+            <input type="hidden" name="id" value="{{id}}">
+        </div>
+        <div class="text-center card-footer">
+            <input class="btn btn-primary" type="submit" value="Save">
+        </div>
+    </form>
+{{/place}}
+
+{{> includes/footer }}

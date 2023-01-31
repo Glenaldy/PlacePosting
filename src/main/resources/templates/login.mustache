@@ -1,0 +1,24 @@
+{{> includes/header}}
+
+<form action="/login" method="post" class="card">
+    <div class="card-header text-center">
+        <h5>Login</h5>
+    </div>
+    {{#message}}
+        <div class="card-body">{{message}}</div>
+    {{/message}}
+    <div class="card-body form-group d-flex flex-column">
+        <label for="username">Username
+            <input class="form-control" type="username" name="username" required>
+        </label>
+        <label for="password">Password
+            <input class="form-control" type="password" name="password" required>
+        </label>
+    </div>
+    <div class="text-center card-footer d-flex justify-content-around">
+        <input class="btn btn-primary" type="submit" name="submit" value="Submit">
+        <a href="/register" class="btn btn-primary">Register</a>
+    </div>
+</form>
+
+{{> includes/footer}}
