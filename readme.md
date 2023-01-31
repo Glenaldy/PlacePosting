@@ -129,9 +129,12 @@ placeList is related to Place
 
 ---
 
-# Spring Security
+# Spring Security & API Dovumentation
 
 ## REST API
+
+A better documentation can be accessed through http://localhost:8080/swagger-ui.html
+Login is needed.
 
 # `PLACE`
 
